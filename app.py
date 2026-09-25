@@ -35,8 +35,7 @@ st.markdown("""
 
 # ---------- Подключение к Google Sheets ----------
 conn = st.connection("gsheets", type=GSheetsConnection)
-SPREADSHEET_URL = st.secrets["connections"]["gsheets"]["spreadsheet"]
-
+SPREADSHEET_URL = st.secrets["connections.gsheets"]["spreadsheet"]
 def load_sheet(name):
     return conn.read(spreadsheet=SPREADSHEET_URL, worksheet=name, ttl=0)
 
